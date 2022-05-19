@@ -1,0 +1,316 @@
+body {
+  margin: 1.5em;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+.hero-image {
+  position: absolute;
+  background: url(../images/shoe.jpg);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position-x: 20%;
+  background-position-y: 20%;
+  z-index: -1;
+  -webkit-animation: introLoad 2s forwards;
+          animation: introLoad 2s forwards;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .logo {
+  color: white;
+  font-weight: bold;
+}
+
+header .logo span {
+  color: black;
+}
+
+header nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 50%;
+  background-color: white;
+  z-index: 999;
+  text-transform: uppercase;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform ease-in-out 0.8s;
+  transition: -webkit-transform ease-in-out 0.8s;
+  transition: transform ease-in-out 0.8s;
+  transition: transform ease-in-out 0.8s, -webkit-transform ease-in-out 0.8s;
+}
+
+header nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 8em;
+}
+
+header nav ul a {
+  color: black;
+  padding: 0.75em 2em;
+  display: block;
+}
+
+header nav ul a:hover {
+  background-color: grey;
+}
+
+header nav .close {
+  float: right;
+  margin: 2em;
+  width: 2.5em;
+}
+
+header svg {
+  width: 3rem;
+  margin-top: -0.6em;
+  cursor: pointer;
+}
+
+.open-nav {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.hero {
+  height: 90vh;
+  color: white;
+  opacity: 0;
+  -webkit-animation: moveDown 1s ease-in-out forwards;
+          animation: moveDown 1s ease-in-out forwards;
+}
+
+.hero h1 {
+  margin-top: 2em;
+  font-size: 3em;
+  line-height: 1.2em;
+}
+
+.hero .subhead {
+  font-size: 1.4rem;
+  line-height: 1.3em;
+}
+
+.hero svg {
+  position: absolute;
+  bottom: 4em;
+  width: 1em;
+  stroke: white;
+  animation: float 1s alternate-reverse infinite;
+}
+
+.hero svg path {
+  fill: white;
+}
+
+.more-info {
+  text-align: center;
+}
+
+.feature .title {
+  color: black;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.feature .desc {
+  color: black;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.feature img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 13em;
+}
+
+@media only screen and (min-width: 680px) {
+  body {
+    margin: 1.5em 5em;
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+@media only screen and (min-width: 920px) {
+  .open {
+    display: none;
+  }
+  header .logo {
+    color: black;
+  }
+  header .logo span {
+    color: red;
+  }
+  header nav {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    position: unset;
+    display: block;
+    width: auto;
+    height: auto;
+    background: none;
+  }
+  header .close {
+    display: none;
+  }
+  header ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 !important;
+  }
+  header ul a {
+    color: white !important;
+    font-size: 0.9rem;
+    padding: 0.5em 1.5em !important;
+  }
+  header ul a:hover {
+    background: none !important;
+    text-decoration: underline;
+  }
+  .hero-image {
+    left: unset;
+    right: 0;
+    width: 50%;
+    height: 42em;
+  }
+  .hero {
+    color: black !important;
+    height: auto;
+    width: 40%;
+    margin-bottom: 8em;
+  }
+  .hero svg {
+    stroke: black;
+    position: unset;
+  }
+  .hero svg path {
+    fill: black;
+  }
+  .feature {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (auto)[2];
+        grid-template-columns: repeat(2, auto);
+    gap: 3em;
+    margin-bottom: 8em;
+  }
+  .feature img {
+    width: 25em;
+  }
+  .feature .content {
+    text-align: right;
+    width: 25em;
+  }
+  .feature.left {
+        grid-template-areas: "left right";
+  }
+  .feature.left img {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: left;
+  }
+  .feature.left .content {
+    text-align: left;
+    width: 25em;
+    -ms-grid-column-align: left;
+        justify-self: left;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .wrapper {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+@-webkit-keyframes introLoad {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes introLoad {
+  from {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@-webkit-keyframes float {
+  from {
+    -webkit-transform: translateY(-25px);
+            transform: translateY(-25px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  from {
+    -webkit-transform: translateY(-25px);
+            transform: translateY(-25px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes moveDown {
+  from {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveDown {
+  from {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=main.css.map */
